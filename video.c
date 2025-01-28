@@ -57,7 +57,7 @@ void initVideo(vec4 clearColor, vec4 viewport, float fov, float near, float far)
 	glEnable(GL_TEXTURE_2D);
 	
 	//Initialize projection matrices
-    mPerspective = perspective(fov, (float) WINX / (float) WINY, near, far);
+    mPerspective = perspective(fov, viewport.d[2] / viewport.d[3], near, far);
 	mOrtho = ortho(0, WINX, 0, WINY, -32, 0);
 }
 
