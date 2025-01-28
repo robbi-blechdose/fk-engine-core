@@ -1,5 +1,5 @@
-#ifndef _QUATERNION_H
-#define _QUATERNION_H
+#ifndef FKEC_QUATERNION_H
+#define FKEC_QUATERNION_H
 
 #include "includes/3dMath.h"
 

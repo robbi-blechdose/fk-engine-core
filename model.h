@@ -1,5 +1,5 @@
-#ifndef _MODEL_H
-#define _MODEL_H
+#ifndef FKEC_MODEL_H
+#define FKEC_MODEL_H
 
 #include "GL/gl.h"
 

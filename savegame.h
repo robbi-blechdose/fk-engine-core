@@ -1,5 +1,5 @@
-#ifndef SAVEGAME_H
-#define SAVEGAME_H
+#ifndef FKEC_SAVEGAME_H
+#define FKEC_SAVEGAME_H
 
 #include <stddef.h>
 #include <stdbool.h>
