@@ -5,6 +5,8 @@
 vec3 cameraPos;
 //x = pitch, y = yaw, z = roll
 vec3 cameraRot;
+//Camera rotation as matrix instead of 3 axes
+float cameraRotMat[16];
 
 void drawCamera(vec3* pos, vec3* rot)
 {
@@ -20,6 +22,13 @@ void drawCameraPrep()
     drawCamera(&cameraPos, &cameraRot);
 }
 
+void drawCameraPrepMat()
+{
+	glLoadIdentity();
+    glLoadMatrixf(cameraRotMat);
+    glTranslatef(-cameraPos.x, -cameraPos.y, -cameraPos.z);
+}
+
 void setCameraPos(vec3 pos)
 {
     cameraPos = pos;
@@ -28,4 +37,9 @@ void setCameraPos(vec3 pos)
 void setCameraRot(vec3 rot)
 {
     cameraRot = rot;
+}
+
+void setCameraRotMat(quat rot)
+{
+    quatToMatrix(cameraRotMat, rot);
 }
