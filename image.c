@@ -10,6 +10,11 @@ void initPNG()
     IMG_Init(IMG_INIT_PNG);
 }
 
+void quitPNG()
+{
+    IMG_Quit();
+}
+
 SDL_Surface* loadPNG(const char* path)
 {
     SDL_Surface* loaded = IMG_Load(path);
@@ -26,7 +31,7 @@ SDL_Surface* loadPNG(const char* path)
     return NULL;
 }
 
-GLuint loadRGBTexture(unsigned char* path)
+GLuint loadRGBTexture(const char* path)
 {
     int sw = 0, sh = 0, sc = 0; // sc goes unused.
     unsigned char* sourceData = stbi_load(path, &sw, &sh, &sc, 3);
