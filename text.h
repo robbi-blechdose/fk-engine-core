@@ -3,6 +3,8 @@
 
 #include <GL/gl.h>
 
+#include "video.h"
+
 /**
  * Calculates the X position for a string of the given length
  * Note: X * 8 / 2 = X * 4
