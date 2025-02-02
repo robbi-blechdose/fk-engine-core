@@ -1,5 +1,5 @@
-#ifndef CAMERA_H
-#define CAMERA_H
+#ifndef FKEC_CAMERA_H
+#define FKEC_CAMERA_H
 
 #include "util.h"
 #include "includes/3dMath.h"

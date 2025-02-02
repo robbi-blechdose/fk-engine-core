@@ -1,5 +1,5 @@
-#ifndef IMAGE_H
-#define IMAGE_H
+#ifndef FKEC_IMAGE_H
+#define FKEC_IMAGE_H
 
 #include "GL/gl.h"
 #include <SDL/SDL.h>

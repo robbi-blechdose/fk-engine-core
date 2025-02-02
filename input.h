@@ -1,5 +1,5 @@
-#ifndef INPUT_H
-#define INPUT_H
+#ifndef FKEC_INPUT_H
+#define FKEC_INPUT_H
 
 #include <stdbool.h>
 #include <SDL/SDL.h>

@@ -1,5 +1,5 @@
-#ifndef VIDEO_H
-#define VIDEO_H
+#ifndef FKEC_VIDEO_H
+#define FKEC_VIDEO_H
 
 #include <stdint.h>
 

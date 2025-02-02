@@ -1,5 +1,5 @@
-#ifndef AUDIO_H
-#define AUDIO_H
+#ifndef FKEC_AUDIO_H
+#define FKEC_AUDIO_H
 
 #include <SDL/SDL_mixer.h>
 

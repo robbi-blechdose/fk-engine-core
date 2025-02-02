@@ -1,5 +1,5 @@
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef FKEC_UTIL_H
+#define FKEC_UTIL_H
 
 #include <math.h>
 #include <stdint.h>
