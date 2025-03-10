@@ -39,7 +39,11 @@ mat4 ortho(float b, float t, float l, float r, float n, float f)
 
 void initVideo(vec4 clearColor, vec4 viewport, float fov, float near, float far)
 {
+    #ifdef FUNKEY
+    screen = SDL_SetVideoMode(WINX, WINY, 16, SDL_FULLSCREEN | SDL_HWSURFACE);
+    #else
     screen = SDL_SetVideoMode(WINX, WINY, 16, SDL_SWSURFACE);
+    #endif
 	SDL_ShowCursor(SDL_DISABLE);
 
     //Initialize TinyGL
@@ -68,15 +72,19 @@ void clearFrame()
 
 void flipFrame()
 {
+    #ifndef FUNKEY
     if(SDL_MUSTLOCK(screen))
     {
         SDL_LockSurface(screen);
     }
+    #endif
     ZB_copyFrameBuffer(frameBuffer, screen->pixels, screen->pitch);
+    #ifndef FUNKEY
 	if(SDL_MUSTLOCK(screen))
     {
 		SDL_UnlockSurface(screen);
     }
+    #endif
 	SDL_Flip(screen);
 }
 
