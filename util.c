@@ -154,3 +154,12 @@ vec3 lerpv3(vec3 a, vec3 b, float step)
                    .y = lerpf(a.y, b.y, step),
                    .z = lerpf(a.z, b.z, step)};
 }
+
+vec3 getRandomSpherePoint(vec3 center, float radius)
+{
+    vec3 vec = {.x = randf(2) - 1, .y = randf(2) - 1, .z = randf(2) - 1};
+    vec = normalizev3(vec);
+    vec = scalev3(radius, vec);
+    vec = addv3(vec, center);
+    return vec;
+}

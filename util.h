@@ -40,6 +40,8 @@ float checkHitSphere(vec3* position, vec3* direction, vec3* center, float radius
 float lerpf(float a, float b, float step);
 vec3 lerpv3(vec3 a, vec3 b, float step);
 
+vec3 getRandomSpherePoint(vec3 center, float radius);
+
 //Resource path definition - instant play breaks relative paths, so the workaround with absolute paths is needed
 #ifdef FUNKEY
 #define RESOURCE(X) "/opk/" X

@@ -3,12 +3,22 @@
 #include "GL/gl.h"
 
 vec3 cameraPos;
+
+void setCameraPos(vec3 pos)
+{
+    cameraPos = pos;
+}
+
+void drawCameraPos()
+{
+    glTranslatef(-cameraPos.x, -cameraPos.y, -cameraPos.z);
+}
+
+//----- Camera rotation using 3 axes -----
 //x = pitch, y = yaw, z = roll
 vec3 cameraRot;
-//Camera rotation as matrix instead of 3 axes
-float cameraRotMat[16];
 
-void drawCamera(vec3* pos, vec3* rot)
+void drawCamera3AImm(vec3* pos, vec3* rot)
 {
 	glLoadIdentity();
     glRotatef(RAD_TO_DEG(rot->x), 1, 0, 0);
@@ -17,26 +27,29 @@ void drawCamera(vec3* pos, vec3* rot)
     glTranslatef(-pos->x, -pos->y, -pos->z);
 }
 
-void drawCameraPrep()
+void drawCamera3A()
 {
-    drawCamera(&cameraPos, &cameraRot);
+    drawCamera3AImm(&cameraPos, &cameraRot);
 }
 
-void drawCameraPrepMat()
+void setCameraRot3A(vec3 rot)
+{
+    cameraRot = rot;
+}
+
+//----- Camera rotation using a matrix -----
+float cameraRotMat[16];
+
+void drawCameraMatRot()
 {
 	glLoadIdentity();
     glLoadMatrixf(cameraRotMat);
-    glTranslatef(-cameraPos.x, -cameraPos.y, -cameraPos.z);
 }
 
-void setCameraPos(vec3 pos)
+void drawCameraMat()
 {
-    cameraPos = pos;
-}
-
-void setCameraRot(vec3 rot)
-{
-    cameraRot = rot;
+    drawCameraMatRot();
+    drawCameraPos();
 }
 
 void setCameraRotMat(quat rot)
